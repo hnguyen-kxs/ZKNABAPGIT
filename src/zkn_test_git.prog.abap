@@ -5,4 +5,4 @@
 *&---------------------------------------------------------------------*
 REPORT ZKN_TEST_GIT.
 
-WRITE: / 'Hello World'.
+WRITE: / 'Hello World4'.
