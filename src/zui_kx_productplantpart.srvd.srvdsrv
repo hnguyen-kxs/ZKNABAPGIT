@@ -1,0 +1,4 @@
+@EndUserText.label: 'ProductPlant Part'
+define service ZUI_KX_ProductPlantPart {
+  expose ZC_KX_ProductPlantPart;
+}
