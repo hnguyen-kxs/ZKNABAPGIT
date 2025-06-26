@@ -1,0 +1,4 @@
+@EndUserText.label: 'InfoRecord PartSource def'
+define service ZUI_KX_INFORECORDPARTSOURCE {
+  expose ZC_KX_InfoRecordPartSource;
+}

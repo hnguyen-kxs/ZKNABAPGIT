@@ -1,0 +1,4 @@
+@EndUserText.label: 'Quota PartSource def'
+define service ZUI_KX_QuotaPartSource {
+  expose ZC_KX_QuotaPartSource;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'MaterialStock - Service def'
+define service ZUI_KX_MaterialStock {
+  expose ZC_KX_MaterialStock;
+}

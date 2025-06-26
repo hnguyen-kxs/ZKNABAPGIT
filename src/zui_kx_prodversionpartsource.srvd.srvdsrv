@@ -1,0 +1,4 @@
+@EndUserText.label: 'ProductVersion PartSource def'
+define service ZUI_KX_PRODVERSIONPARTSOURCE {
+  expose ZC_KX_ProdVersionPartSource;
+}
