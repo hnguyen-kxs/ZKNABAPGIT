@@ -1,12 +1,14 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'ProductPlant Part'
+@EndUserText.label: 'ProductPlant Part - Composite'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #COMPOSITE
+
 define view entity ZI_KX_ProductPlantPart
   as select from ZI_ProductPlantPart
 {
@@ -66,8 +68,8 @@ define view entity ZI_KX_ProductPlantPart
        Division,
        LaboratoryOrDesignOffice,
        PlanningStrategyGroup1,
-       //BackwardCnsmpnPeriodInWorkDay1,
-       //FwdConsumptionPeriodInWorkDay1,
+       BwdConsumptionPerMRPGroup,
+       FwdConsumptionPerMRPGroup,
        LotSizeType,
        PurchasingProcessingDuration,
        HasProductionVersion
