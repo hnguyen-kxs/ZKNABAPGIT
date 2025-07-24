@@ -1,0 +1,4 @@
+@EndUserText.label: 'ProductionOrder def.'
+define service ZUI_KX_ProductionOrders {
+  expose ZC_KX_ProductionOrders;
+}

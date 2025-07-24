@@ -1,12 +1,14 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'ProductPlantPart'
+@EndUserText.label: 'ProductPlant Part - Basic'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #BASIC
+
 define view entity ZI_ProductPlantPart
   as select from    I_ProductPlantSupplyPlanning as _SupPlan
     left outer join I_ProductDescription         as _MatDesc    on  _SupPlan.Product  = _MatDesc.Product
@@ -106,8 +108,6 @@ define view entity ZI_ProductPlantPart
       _WorkSched.HasProductionVersion                      as HasProductionVersion
 
 }
-
-
 where
       _MatPlant.IsMarkedForDeletion = ' '
   and _Prod.IsMarkedForDeletion     = ' '

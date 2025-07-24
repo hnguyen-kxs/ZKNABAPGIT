@@ -1,0 +1,4 @@
+@EndUserText.label: 'PartUoM def'
+define service ZUI_KX_PartUoM {
+  expose ZC_KX_PartUoM;
+}

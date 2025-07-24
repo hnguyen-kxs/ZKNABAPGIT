@@ -1,0 +1,4 @@
+@EndUserText.label: 'BuyerCode def'
+define service ZUI_KX_BuyerCode {
+  expose ZC_KX_BuyerCode;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Delivery def.'
+define service ZUI_KX_Deliveries {
+  expose ZC_KX_Deliveries;
+}

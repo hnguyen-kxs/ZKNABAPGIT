@@ -1,0 +1,4 @@
+@EndUserText.label: 'Supplier def.'
+define service ZUI_KX_Suppliers {
+  expose ZC_KX_Suppliers;
+}

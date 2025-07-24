@@ -10,7 +10,7 @@
 @VDM.viewType: #CONSUMPTION
 
 define view entity ZC_KX_InfoRecordPartSource
-  as select from ZI_KX_InfoRecordPartSource
+  as select from ZI_InfoRecordPartSource
 {
   key PurchasingInfoRecord,
   key PurchasingOrganization,

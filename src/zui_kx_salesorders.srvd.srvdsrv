@@ -1,0 +1,4 @@
+@EndUserText.label: 'SalesOrder def.'
+define service ZUI_KX_SalesOrders {
+  expose ZC_KX_SalesOrders;
+}

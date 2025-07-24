@@ -1,0 +1,4 @@
+@EndUserText.label: 'UnitOfMeasure def'
+define service ZUI_KX_UNITOFMEASURE {
+  expose ZC_KX_UnitOfMeasure;
+}

@@ -1,12 +1,14 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'ProductVersion PartSource'
+@EndUserText.label: 'ProductVersion PartSource - Basic'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #BASIC
+
 define view entity ZI_ProdVersionPartSource
   as select from    I_ProductionVersion          as _ProdVer
     inner join      I_ProductPlantSupplyPlanning as _SupPlan    on _ProdVer.Material =  _SupPlan.Product

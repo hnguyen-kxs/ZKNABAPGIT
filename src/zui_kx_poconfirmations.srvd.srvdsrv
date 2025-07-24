@@ -1,0 +1,4 @@
+@EndUserText.label: 'POConfirmation def.'
+define service ZUI_KX_POConfirmations {
+  expose ZC_KX_POConfirmations;
+}

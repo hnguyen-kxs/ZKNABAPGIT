@@ -10,7 +10,7 @@
 @VDM.viewType: #CONSUMPTION
 
 define view entity ZC_KX_MaterialStock
-  as select from ZI_KX_MaterialStock
+  as select from ZI_MaterialStock
 {
   key Material,
   key Plant,

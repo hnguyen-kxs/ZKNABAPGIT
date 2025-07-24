@@ -1,0 +1,4 @@
+@EndUserText.label: 'Purchase Order def'
+define service ZUI_KX_PurchaseOrders {
+  expose ZC_KX_PurchaseOrders;
+}

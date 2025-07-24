@@ -1,0 +1,4 @@
+@EndUserText.label: 'Bill Of Material def'
+define service ZUI_KX_BillOfMaterial {
+  expose ZC_KX_BillOfMaterial;
+}

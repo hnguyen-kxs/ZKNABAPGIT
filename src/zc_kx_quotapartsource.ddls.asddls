@@ -10,7 +10,7 @@
 @VDM.viewType: #CONSUMPTION
 
 define view entity ZC_KX_QuotaPartSource
-  as select from ZI_KX_QuotaPartSource
+  as select from ZI_QuotaPartSource
 {
   key QuotaArrangement,
   key QuotaArrangementItem,

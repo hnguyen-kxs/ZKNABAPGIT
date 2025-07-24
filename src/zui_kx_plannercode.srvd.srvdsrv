@@ -1,0 +1,4 @@
+@EndUserText.label: 'PlannerCode def'
+define service ZUI_KX_PlannerCode {
+  expose ZC_KX_PlannerCode;
+}

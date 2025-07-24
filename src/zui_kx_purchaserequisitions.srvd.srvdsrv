@@ -1,0 +1,4 @@
+@EndUserText.label: 'Purchase Requisition def'
+define service ZUI_KX_PurchaseRequisitions {
+  expose ZC_KX_PurchaseRequisitions;
+}
