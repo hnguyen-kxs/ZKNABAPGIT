@@ -1,4 +1,0 @@
-@EndUserText.label: 'Customer def.'
-define service ZUI_KX_Customer {
-  expose ZC_KX_Customer;
-}
