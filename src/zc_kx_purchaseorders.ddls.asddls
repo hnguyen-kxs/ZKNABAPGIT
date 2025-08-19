@@ -21,6 +21,8 @@ define view entity ZC_KX_PurchaseOrders
       @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
       RoughGoodsReceiptQty,
       PurchaseOrderQuantityUnit,
+      @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
+      MRPRelevantQuantity,
 
       Material,
       Plant,

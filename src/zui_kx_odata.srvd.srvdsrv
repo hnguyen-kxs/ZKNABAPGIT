@@ -1,0 +1,28 @@
+@EndUserText.label: 'Kinaxis Odata Service def.'
+define service ZUI_KX_ODATA {
+  expose ZC_KX_BillOfMaterial;
+  expose ZC_KX_BillOfMaterialSalesBOM;
+  expose ZC_KX_BuyerCode;
+  expose ZC_KX_Customer;
+  expose ZC_KX_Deliveries;
+  expose ZC_KX_InfoRecordPartSource;
+  expose ZC_KX_MaterialStock;
+  expose ZC_KX_PartUoM;
+  expose ZC_KX_PlannedOrders;
+  expose ZC_KX_PlannedOrderComponents;
+  expose ZC_KX_PlannerCode;
+  expose ZC_KX_PlndIndepRqmts;
+  expose ZC_KX_POConfirmations;
+  expose ZC_KX_ProdOrderComponents;
+  expose ZC_KX_ProductionOrders;
+  expose ZC_KX_ProductPlantPart;
+  expose ZC_KX_ProdVersionPartSource;
+  expose ZC_KX_PurchaseContracts;
+  expose ZC_KX_PurchaseOrders;
+  expose ZC_KX_PurchaseRequisitions;
+  expose ZC_KX_QuotaPartSource;
+  expose ZC_KX_SalesOrders;
+  expose ZC_KX_SchedulingAgreements;
+  expose ZC_KX_Suppliers;
+  expose ZC_KX_UnitOfMeasure;
+}

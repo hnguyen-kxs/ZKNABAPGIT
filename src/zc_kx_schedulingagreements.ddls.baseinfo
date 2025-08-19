@@ -2,7 +2,9 @@
 "BASEINFO":
 {
 "FROM":
-[],
+[
+"ZI_SCHEDULINGAGREEMENTS"
+],
 "ASSOCIATED":
 [],
 "BASE":

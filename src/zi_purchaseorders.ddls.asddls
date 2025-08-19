@@ -25,6 +25,8 @@ define view entity ZI_PurchaseOrders
       @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
       _PurOrdLine.RoughGoodsReceiptQty          as RoughGoodsReceiptQty,
       _PurOrdLine.PurchaseOrderQuantityUnit     as PurchaseOrderQuantityUnit,
+      @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
+      _PurOrdLine.MRPRelevantQuantity           as MRPRelevantQuantity,
 
       _PurOrdItem.Material                      as Material,
       _PurOrdItem.Plant                         as Plant,
