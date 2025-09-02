@@ -28,8 +28,8 @@ define view entity ZI_ProductPlantPart
                                                                 and _SupPlan.Plant   = _WorkSched.Plant
 
 
-  //    left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant           = _Prfl.Plant
-  //                                                                and _SupPlan.ProcurementType = _Prfl.MaterialProcurementProfile
+    left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant           = _Prfl.Plant
+                                                                and _SupPlan.ProcurementSubType = _Prfl.MaterialProcurementProfile
 
 {
   key _SupPlan.Product                                     as Product,
@@ -94,7 +94,7 @@ define view entity ZI_ProductPlantPart
       _Prod.Division                                       as Division,
       _Prod.LaboratoryOrDesignOffice                       as LaboratoryOrDesignOffice,
 
-      _MRPGroup.PlanningStrategyGroup                      as PlanningStrategyGroup1,
+      _MRPGroup.PlanningStrategyGroup                      as MRPGroupPlanningStrategyGroup,
       _MRPGroup.BackwardCnsmpnPeriodInWorkDays             as BwdConsumptionPerMRPGroup,
       _MRPGroup.FwdConsumptionPeriodInWorkDays             as FwdConsumptionPerMRPGroup,
 
@@ -105,7 +105,9 @@ define view entity ZI_ProductPlantPart
       _MRPPlant.PurchasingProcessingDuration               as PurchasingProcessingDuration,
 
 
-      _WorkSched.HasProductionVersion                      as HasProductionVersion
+      _WorkSched.HasProductionVersion                      as HasProductionVersion,
+
+      _Prfl.SupplyingOrProductionPlant                     as SupplyingOrProductionPlant
 
 }
 where

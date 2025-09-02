@@ -50,7 +50,7 @@ define view entity ZC_KX_InfoRecordPartSource
       LotSizingProcedure,
       PlanningTimeFence,
       ProcurementType,
-      ProcurementSubype,
+      ProcurementSubType,
       AssemblyScrapPercent,
       GoodsReceiptDuration,
       ProdInhProdnDurationInWorkDays,
@@ -59,5 +59,6 @@ define view entity ZC_KX_InfoRecordPartSource
       @Semantics.amount.currencyCode: 'Currency'
       StandardPrice,
       PriceUnitQty,
-      SupplierName
+      SupplierName,
+      SupplyingOrProductionPlant
 }

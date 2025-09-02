@@ -19,7 +19,7 @@ define view entity ZC_KX_ProductPlantPart
        @Semantics.quantity.unitOfMeasure: 'BaseUnit'
        MaximumLotSizeQuantity,
        @Semantics.quantity.unitOfMeasure: 'BaseUnit'
-       MinimumLotSizeQuantity as MinimumLotSizeQuantity,
+       MinimumLotSizeQuantity,
        @Semantics.quantity.unitOfMeasure: 'BaseUnit'
        LotSizeRoundingQuantity,
        LotSizingProcedure,
@@ -67,10 +67,11 @@ define view entity ZC_KX_ProductPlantPart
        ItemCategoryGroup,
        Division,
        LaboratoryOrDesignOffice,
-       PlanningStrategyGroup1,
+       MRPGroupPlanningStrategyGroup,
        BwdConsumptionPerMRPGroup,
        FwdConsumptionPerMRPGroup,
        LotSizeType,
        PurchasingProcessingDuration,
-       HasProductionVersion
+       HasProductionVersion,
+       SupplyingOrProductionPlant
 }

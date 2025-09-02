@@ -18,6 +18,8 @@ define view entity ZI_InfoRecordPartSource
     left outer join I_ProductValuationBasic        as _ProductVal on  _PurInfoRec.Material = _ProductVal.Product
                                                                   and _InfoRec.Plant       = _ProductVal.ValuationArea
     left outer join I_Supplier                     as _Supplier   on _PurInfoRec.Supplier = _Supplier.Supplier
+    left outer join I_MatlProcurementProfile       as _Prfl       on  _SupPlan.Plant           = _Prfl.Plant
+                                                                  and _SupPlan.ProcurementSubType = _Prfl.MaterialProcurementProfile
 {
   key _InfoRec.PurchasingInfoRecord           as PurchasingInfoRecord,
   key _InfoRec.PurchasingOrganization         as PurchasingOrganization,
@@ -59,7 +61,7 @@ define view entity ZI_InfoRecordPartSource
       _SupPlan.LotSizingProcedure             as LotSizingProcedure,
       _SupPlan.PlanningTimeFence              as PlanningTimeFence,
       _SupPlan.ProcurementType                as ProcurementType,
-      _SupPlan.ProcurementSubType             as ProcurementSubype,
+      _SupPlan.ProcurementSubType             as ProcurementSubType,
       _SupPlan.AssemblyScrapPercent           as AssemblyScrapPercent,
       _SupPlan.GoodsReceiptDuration           as GoodsReceiptDuration,
       _SupPlan.ProdInhProdnDurationInWorkDays as ProdInhProdnDurationInWorkDays,
@@ -70,7 +72,9 @@ define view entity ZI_InfoRecordPartSource
       @Semantics.amount.currencyCode: 'Currency'
       _ProductVal.StandardPrice               as StandardPrice,
       _ProductVal.PriceUnitQty                as PriceUnitQty,
-      _Supplier.SupplierName                  as SupplierName
+      _Supplier.SupplierName                  as SupplierName,
+      _Prfl.SupplyingOrProductionPlant        as SupplyingOrProductionPlant
+
 }
 where
       _InfoRec.PriceValidityEndDate >= $session.system_date

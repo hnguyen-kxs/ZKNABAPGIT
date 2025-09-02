@@ -18,6 +18,8 @@ define view entity ZI_QuotaPartSource
                                                                 and _Quota.Plant    = _ProductVal.ValuationArea
     inner join      I_Plant                      as _Plant      on _Quota.Plant = _Plant.Plant
     left outer join I_Supplier                   as _Supplier   on _QuotaItem.Supplier = _Supplier.Supplier
+    left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant           = _Prfl.Plant
+                                                                and _SupPlan.ProcurementSubType = _Prfl.MaterialProcurementProfile
 {
   key    _Quota.QuotaArrangement                  as QuotaArrangement,
   key    _QuotaItem.QuotaArrangementItem          as QuotaArrangementItem,
@@ -61,7 +63,7 @@ define view entity ZI_QuotaPartSource
          _SupPlan.PlanningTimeFence               as PlanningTimeFence,
          _SupPlan.PlannedDeliveryDurationInDays   as PlannedDeliveryDurationInDays,
          _SupPlan.ProcurementType                 as ProcurementType,
-         _SupPlan.ProcurementSubType              as ProcurementSubype,
+         _SupPlan.ProcurementSubType              as ProcurementSubType,
          _SupPlan.AssemblyScrapPercent            as AssemblyScrapPercent,
          _SupPlan.GoodsReceiptDuration            as GoodsReceiptDuration,
          _SupPlan.ProdInhProdnDurationInWorkDays  as ProdInhProdnDurationInWorkDays,
@@ -71,7 +73,9 @@ define view entity ZI_QuotaPartSource
          @Semantics.amount.currencyCode: 'Currency'
          _ProductVal.StandardPrice                as StandardPrice,
          _ProductVal.PriceUnitQty                 as PriceUnitQty,
-         _Supplier.SupplierName                   as SupplierName
+         _Supplier.SupplierName                   as SupplierName,
+
+         _Prfl.SupplyingOrProductionPlant         as SupplyingOrProductionPlant
 }
 where
   _Quota.ValidityEndDate >= $session.system_date
