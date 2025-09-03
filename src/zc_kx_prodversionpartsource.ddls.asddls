@@ -49,5 +49,6 @@ define view entity ZC_KX_ProdVersionPartSource
          Currency,
          @Semantics.amount.currencyCode: 'Currency'
          StandardPrice,
-         PriceUnitQty
+         PriceUnitQty,
+         SupplyingOrProductionPlant
 }

@@ -27,7 +27,6 @@ define view entity ZI_ProductPlantPart
     left outer join I_ProductWorkScheduling      as _WorkSched  on  _SupPlan.Product = _WorkSched.Product
                                                                 and _SupPlan.Plant   = _WorkSched.Plant
 
-
     left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant           = _Prfl.Plant
                                                                 and _SupPlan.ProcurementSubType = _Prfl.MaterialProcurementProfile
 
@@ -98,12 +97,9 @@ define view entity ZI_ProductPlantPart
       _MRPGroup.BackwardCnsmpnPeriodInWorkDays             as BwdConsumptionPerMRPGroup,
       _MRPGroup.FwdConsumptionPeriodInWorkDays             as FwdConsumptionPerMRPGroup,
 
-
       _MRPLotSize.LotSizeType                              as LotSizeType,
 
-
       _MRPPlant.PurchasingProcessingDuration               as PurchasingProcessingDuration,
-
 
       _WorkSched.HasProductionVersion                      as HasProductionVersion,
 
