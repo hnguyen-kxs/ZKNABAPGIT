@@ -42,6 +42,7 @@ define view entity ZI_PurchaseOrders
 
       _PurOrd.PurchaseOrderType                 as PurchaseOrderType,
       _PurOrd.Supplier                          as Supplier,
+      _PurOrd.SupplyingPlant                    as SupplyingPlant,
       _Supplier.SupplierName                    as SupplierName
 
 }

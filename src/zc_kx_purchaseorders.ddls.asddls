@@ -37,5 +37,6 @@ define view entity ZC_KX_PurchaseOrders
 
       PurchaseOrderType,
       Supplier,
+      SupplyingPlant,
       SupplierName
 }
