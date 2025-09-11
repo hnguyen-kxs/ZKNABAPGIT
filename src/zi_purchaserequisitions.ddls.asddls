@@ -45,3 +45,13 @@ define view entity ZI_PurchaseRequisitions
       PurchaseRequisitionIsFixed
 
 }
+where
+        IsDeleted         =  ''
+  and   IsClosed          =  ''
+  and   ProcessingStatus  <> 'L'
+  and   RequestedQuantity >  0
+  and   Material          != ''
+  and   not(
+      ConsumptionPosting  =  'V'
+      and PurReqnOrigin   =  'V'
+    )
