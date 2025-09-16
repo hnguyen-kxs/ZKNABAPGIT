@@ -22,7 +22,8 @@ define view entity ZI_PlndIndepRqmts
       _Header.RequirementPlan                as RequirementPlan,
       _Header.PlndIndepRqmtConsumptionStrgy  as PlndIndepRqmtConsumptionStrgy,
       _Header.PlndIndepRqmtConsumptionAssgmt as PlndIndepRqmtConsumptionAssgmt,
-      _Item.BaseUnit                         as BaseUnit
+      _Item.BaseUnit                         as BaseUnit,
+      _Item.WorkingDayDate                   as WorkingDayDate
 }
 where
   _Item.PlannedQuantity > 0

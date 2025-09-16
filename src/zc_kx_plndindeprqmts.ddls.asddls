@@ -21,5 +21,6 @@ define view entity ZC_KX_PlndIndepRqmts
        RequirementPlan,
        PlndIndepRqmtConsumptionStrgy,
        PlndIndepRqmtConsumptionAssgmt,
-       BaseUnit
+       BaseUnit,
+       WorkingDayDate
 }
