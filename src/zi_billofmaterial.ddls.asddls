@@ -19,7 +19,7 @@ define view entity ZI_BillOfMaterial
                                                               and _BOMLink.BillOfMaterial         = _BOMHeader.BillOfMaterial
                                                               and _BOMLink.BillOfMaterialVariant  = _BOMHeader.BillOfMaterialVariant
 
-    left outer join ZI_PartUOM                  as _PartUOM   on  _BOMItem.BillOfMaterialComponent = _PartUOM.Product
+    left outer join ZI_PartUoM                  as _PartUOM   on  _BOMItem.BillOfMaterialComponent = _PartUOM.Product
                                                               and _BOMLink.Plant                   = _PartUOM.Plant
                                                               and _BOMItem.BillOfMaterialItemUnit  = _PartUOM.AlternativeUnit
 
@@ -36,7 +36,7 @@ define view entity ZI_BillOfMaterial
   key    cast(_BOMItem.BillOfMaterialItemNodeNumber as abap.char(8)) as BillOfMaterialItemNodeNumber,
 
   key    _BOMLink.BillOfMaterialVariant                              as BillOfMaterialVariant,
-  key    _BOMLink.Material                                           as Material,
+  key    cast(_BOMLink.Material as abap.char(40))                    as Material,
   key    _BOMLink.Plant                                              as Plant,
   key    _BOMLink.BillOfMaterialVariantUsage                         as BillOfMaterialVariantUsage,
 
@@ -44,7 +44,7 @@ define view entity ZI_BillOfMaterial
          _BOMItem.ValidityEndDate                                    as ValidityEndDate,
          _BOMItem.EngineeringChangeDocument                          as EngineeringChangeDocument,
          _BOMItem.ChgToEngineeringChgDocument                        as ChgToEngineeringChgDocument,
-         _BOMItem.BillOfMaterialComponent                            as BillOfMaterialComponent,
+         cast(_BOMItem.BillOfMaterialComponent as abap.char(40))     as BillOfMaterialComponent,
          cast(_BOMItem.BillOfMaterialItemNumber as abap.char(4))     as BillOfMaterialItemNumber,
          _BOMItem.BillOfMaterialItemUnit                             as BillOfMaterialItemUnit,
          @Semantics.quantity.unitOfMeasure: 'BillOfMaterialItemUnit'

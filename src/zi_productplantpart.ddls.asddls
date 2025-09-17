@@ -27,11 +27,11 @@ define view entity ZI_ProductPlantPart
     left outer join I_ProductWorkScheduling      as _WorkSched  on  _SupPlan.Product = _WorkSched.Product
                                                                 and _SupPlan.Plant   = _WorkSched.Plant
 
-    left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant           = _Prfl.Plant
+    left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant              = _Prfl.Plant
                                                                 and _SupPlan.ProcurementSubType = _Prfl.MaterialProcurementProfile
 
 {
-  key _SupPlan.Product                                     as Product,
+  key cast(_SupPlan.Product as abap.char(40))              as Product,
   key _SupPlan.Plant                                       as Plant,
       @Semantics.quantity.unitOfMeasure: 'BaseUnit'
       _SupPlan.FixedLotSizeQuantity                        as FixedLotSizeQuantity,

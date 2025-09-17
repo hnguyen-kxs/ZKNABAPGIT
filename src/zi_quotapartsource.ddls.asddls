@@ -18,12 +18,12 @@ define view entity ZI_QuotaPartSource
                                                                 and _Quota.Plant    = _ProductVal.ValuationArea
     inner join      I_Plant                      as _Plant      on _Quota.Plant = _Plant.Plant
     left outer join I_Supplier                   as _Supplier   on _QuotaItem.Supplier = _Supplier.Supplier
-    left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant           = _Prfl.Plant
+    left outer join I_MatlProcurementProfile     as _Prfl       on  _SupPlan.Plant              = _Prfl.Plant
                                                                 and _SupPlan.ProcurementSubType = _Prfl.MaterialProcurementProfile
 {
   key    _Quota.QuotaArrangement                  as QuotaArrangement,
   key    _QuotaItem.QuotaArrangementItem          as QuotaArrangementItem,
-         _Quota.Material                          as Material,
+         cast(_Quota.Material as abap.char(40))   as Material,
          _Quota.Plant                             as Plant,
          _Quota.ValidityEndDate                   as ValidityEndDate,
          _Quota.ValidityStartDate                 as ValidityStartDate,

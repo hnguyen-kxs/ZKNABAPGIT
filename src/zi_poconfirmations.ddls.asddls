@@ -41,7 +41,7 @@ define view entity ZI_POConfirmations
 
       _POItem.PurchaseOrderCategory           as PurchaseOrderCategory,
       _POItem.DocumentCurrency                as DocumentCurrencyPOItem,
-      _POItem.Material                        as Material,
+      cast(_POItem.Material as abap.char(40)) as Material,
       _POItem.Plant                           as Plant,
       _POItem.Subcontractor                   as Subcontractor,
       _POItem.SupplierIsSubcontractor         as SupplierIsSubcontractor,
@@ -97,4 +97,3 @@ where
   and  _POItem.OrderQuantity                   >  0
   and  _POItem.PurchaseOrderCategory           <> 'A'
   and  _POOrder.PurchasingDocumentDeletionCode =  ''
-

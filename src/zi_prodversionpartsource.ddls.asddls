@@ -20,47 +20,47 @@ define view entity ZI_ProdVersionPartSource
                                                                 and _SupPlan.ProcurementSubType = _Prfl.MaterialProcurementProfile
 
 {
-  key _ProdVer.Material                       as Material,
-  key _ProdVer.Plant                          as Plant,
-  key _ProdVer.ProductionVersion              as ProductionVersion,
-      _ProdVer.BillOfOperationsType           as BillOfOperationsType,
-      _ProdVer.BillOfOperationsGroup          as BillOfOperationsGroup,
-      _ProdVer.BillOfOperationsVariant        as BillOfOperationsVariant,
+  key cast(_ProdVer.Material as abap.char(40)) as Material,
+  key _ProdVer.Plant                           as Plant,
+  key _ProdVer.ProductionVersion               as ProductionVersion,
+      _ProdVer.BillOfOperationsType            as BillOfOperationsType,
+      _ProdVer.BillOfOperationsGroup           as BillOfOperationsGroup,
+      _ProdVer.BillOfOperationsVariant         as BillOfOperationsVariant,
 
-      _ProdVer.BillOfMaterialVariantUsage     as BillOfMaterialVariantUsage,
-      _ProdVer.BillOfMaterialVariant          as BillOfMaterialVariant,
-      _ProdVer.ValidityStartDate              as ValidityStartDate,
-      _ProdVer.ValidityEndDate                as ValidityEndDate,
-      _ProdVer.ProductionVersionIsLocked      as ProductionVersionIsLocked,
-      _ProdVer.MaterialProcurementProfile     as MaterialProcurementProfile,
-      _ProdVer.MaterialBaseUnit               as MaterialBaseUnit,
+      _ProdVer.BillOfMaterialVariantUsage      as BillOfMaterialVariantUsage,
+      _ProdVer.BillOfMaterialVariant           as BillOfMaterialVariant,
+      _ProdVer.ValidityStartDate               as ValidityStartDate,
+      _ProdVer.ValidityEndDate                 as ValidityEndDate,
+      _ProdVer.ProductionVersionIsLocked       as ProductionVersionIsLocked,
+      _ProdVer.MaterialProcurementProfile      as MaterialProcurementProfile,
+      _ProdVer.MaterialBaseUnit                as MaterialBaseUnit,
       @Semantics.quantity.unitOfMeasure: 'MaterialBaseUnit'
-      _ProdVer.MaterialMinLotSizeQuantity     as MaterialMinLotSizeQuantity,
+      _ProdVer.MaterialMinLotSizeQuantity      as MaterialMinLotSizeQuantity,
       @Semantics.quantity.unitOfMeasure: 'MaterialBaseUnit'
-      _ProdVer.MaterialMaxLotSizeQuantity     as MaterialMaxLotSizeQuantity,
+      _ProdVer.MaterialMaxLotSizeQuantity      as MaterialMaxLotSizeQuantity,
 
       @Semantics.quantity.unitOfMeasure: 'MaterialBaseUnit'
-      _SupPlan.FixedLotSizeQuantity           as FixedLotSizeQuantity,
+      _SupPlan.FixedLotSizeQuantity            as FixedLotSizeQuantity,
       @Semantics.quantity.unitOfMeasure: 'MaterialBaseUnit'
-      _SupPlan.MaximumLotSizeQuantity         as MaximumLotSizeQuantity,
+      _SupPlan.MaximumLotSizeQuantity          as MaximumLotSizeQuantity,
       @Semantics.quantity.unitOfMeasure: 'MaterialBaseUnit'
-      _SupPlan.MinimumLotSizeQuantity         as MinimumLotSizeQuantity,
+      _SupPlan.MinimumLotSizeQuantity          as MinimumLotSizeQuantity,
       @Semantics.quantity.unitOfMeasure: 'MaterialBaseUnit'
-      _SupPlan.LotSizeRoundingQuantity        as LotSizeRoundingQuantity,
-      _SupPlan.LotSizingProcedure             as LotSizingProcedure,
-      _SupPlan.PlanningTimeFence              as PlanningTimeFence,
-      _SupPlan.PlannedDeliveryDurationInDays  as PlannedDeliveryDurationInDays,
-      _SupPlan.ProcurementType                as ProcurementType,
-      _SupPlan.ProcurementSubType             as ProcurementSubType,
-      _SupPlan.AssemblyScrapPercent           as AssemblyScrapPercent,
-      _SupPlan.GoodsReceiptDuration           as GoodsReceiptDuration,
-      _SupPlan.ProdInhProdnDurationInWorkDays as ProdInhProdnDurationInWorkDays,
-      _Plant.FactoryCalendar                  as FactoryCalendar,
+      _SupPlan.LotSizeRoundingQuantity         as LotSizeRoundingQuantity,
+      _SupPlan.LotSizingProcedure              as LotSizingProcedure,
+      _SupPlan.PlanningTimeFence               as PlanningTimeFence,
+      _SupPlan.PlannedDeliveryDurationInDays   as PlannedDeliveryDurationInDays,
+      _SupPlan.ProcurementType                 as ProcurementType,
+      _SupPlan.ProcurementSubType              as ProcurementSubType,
+      _SupPlan.AssemblyScrapPercent            as AssemblyScrapPercent,
+      _SupPlan.GoodsReceiptDuration            as GoodsReceiptDuration,
+      _SupPlan.ProdInhProdnDurationInWorkDays  as ProdInhProdnDurationInWorkDays,
+      _Plant.FactoryCalendar                   as FactoryCalendar,
 
-      _ProductVal.Currency                    as Currency,
+      _ProductVal.Currency                     as Currency,
       @Semantics.amount.currencyCode: 'Currency'
-      _ProductVal.StandardPrice               as StandardPrice,
-      _ProductVal.PriceUnitQty                as PriceUnitQty,
-      
+      _ProductVal.StandardPrice                as StandardPrice,
+      _ProductVal.PriceUnitQty                 as PriceUnitQty,
+
       _Prfl.SupplyingOrProductionPlant         as SupplyingOrProductionPlant
 }

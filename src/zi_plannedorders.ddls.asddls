@@ -13,7 +13,7 @@ define view entity ZI_PlannedOrders
 {
   key PlannedOrder,
       PlannedOrderType,
-      Material,
+      cast(Material as abap.char(40)) as Material,
       MRPPlant,
       MaterialProcurementType,
       MaterialGoodsReceiptDuration,

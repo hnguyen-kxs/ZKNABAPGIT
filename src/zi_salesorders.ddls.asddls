@@ -32,11 +32,11 @@ define view entity ZI_SalesOrders
       _SalesOrd.ProductAvailabilityDate       as ProductAvailabilityDate,
       _SalesOrd.ProdAvailabilityCheckRqmtType as ProdAvailabilityCheckRqmtType,
       _SalesOrd.GoodsIssueDate                as GoodsIssueDate,
-      _SalesOrd. ItemIsDeliveryRelevant       as ItemIsDeliveryRelevant,
+      _SalesOrd.ItemIsDeliveryRelevant        as ItemIsDeliveryRelevant,
       _SalesOrd.DelivBlockReasonForSchedLine  as DelivBlockReasonForSchedLine,
 
       _OpenQty.SalesDocumentType              as SalesDocumentType,
-      _OpenQty.Product                        as Product,
+      cast(_OpenQty.Product as abap.char(40)) as Product,
       _OpenQty.Plant                          as Plant,
       _OpenQty.Batch                          as Batch,
       _OpenQty.InventorySpecialStockType      as InventorySpecialStockType,

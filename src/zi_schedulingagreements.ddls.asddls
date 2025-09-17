@@ -34,7 +34,7 @@ define view entity ZI_SchedulingAgreements
       _Sched.SupplyingSupplier               as SupplyingSupplier,
 
       _Item.SchedulingAgreementItem          as SchedulingAgreementItem,
-      _Item.Material                         as Material,
+      cast(_Item.Material as abap.char(40))  as Material,
       _Item.Plant                            as Plant,
       _Item.OrderQuantityUnit                as OrderQuantityUnit,
       @Semantics.quantity.unitOfMeasure: 'OrderQuantityUnit'

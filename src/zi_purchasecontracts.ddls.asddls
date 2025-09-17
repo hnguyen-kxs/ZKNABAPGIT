@@ -34,7 +34,7 @@ define view entity ZI_PurchaseContracts
       _Contr.SupplyingSupplier               as SupplyingSupplier,
       _Contr.PurchasingDocumentOrigin        as PurchasingDocumentOrigin,
 
-      _Item.Material                         as Material,
+      cast(_Item.Material as abap.char(40))  as Material,
       @Semantics.amount.currencyCode: 'DocumentCurrency'
       _Item.ContractNetPriceAmount           as ContractNetPriceAmount,
 

@@ -17,7 +17,7 @@ define view entity ZI_PurchaseRequisitions
       PurchasingDocumentItem,
       PurchaseRequisitionType,
       PurchasingDocumentItemCategory,
-      Material,
+      cast(Material as abap.char(40)) as Material,
       @Semantics.quantity.unitOfMeasure: 'BaseUnit'
       RequestedQuantity,
       BaseUnit,

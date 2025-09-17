@@ -13,7 +13,7 @@ define view entity ZI_MaterialStock
   as select from    I_MaterialStock_2 as _MatStock
     left outer join I_StorageLocation as _StrLoc on _MatStock.StorageLocation = _StrLoc.StorageLocation
 {
-  key _MatStock.Material                                   as Material,
+  key cast(_MatStock.Material as abap.char(40))            as Material,
   key _MatStock.Plant                                      as Plant,
   key _MatStock.StorageLocation                            as StorageLocation,
   key _MatStock.Batch                                      as Batch,

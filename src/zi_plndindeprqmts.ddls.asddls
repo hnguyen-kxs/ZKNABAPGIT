@@ -16,7 +16,7 @@ define view entity ZI_PlndIndepRqmts
       @Semantics.quantity.unitOfMeasure : 'BaseUnit'
   key _Item.PlannedQuantity                  as PlannedQuantity,
       _Header.PlndIndepRqmtVersion           as PlndIndepRqmtVersion,
-      _Header.Product                        as Product,
+      cast(_Header.Product as abap.char(40)) as Product,
       _Header.Plant                          as Plant,
       _Header.PlndIndepRqmtType              as PlndIndepRqmtType,
       _Header.RequirementPlan                as RequirementPlan,
