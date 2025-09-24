@@ -27,6 +27,11 @@ define view entity ZI_PurchaseOrders
       _PurOrdLine.PurchaseOrderQuantityUnit       as PurchaseOrderQuantityUnit,
       @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
       _PurOrdLine.MRPRelevantQuantity             as MRPRelevantQuantity,
+      @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
+      _PurOrdLine.StockTransferDeliveredQuantity  as StockTransferDeliveredQuantity,
+      @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
+      _PurOrdLine.ScheduleLineIssuedQuantity      as ScheduleLineIssuedQuantity,
+      _PurOrdLine.ProductAvailabilityDate         as ProductAvailabilityDate,
 
       cast(_PurOrdItem.Material as abap.char(40)) as Material,
       _PurOrdItem.Plant                           as Plant,
@@ -38,7 +43,7 @@ define view entity ZI_PurchaseOrders
       _PurOrdItem. DocumentCurrency               as DocumentCurrency,
       @Semantics.amount.currencyCode: 'DocumentCurrency'
       _PurOrdItem.NetPriceAmount                  as NetPriceAmount,
-
+      _PurOrdLine.Reservation                     as Reservation,
 
       _PurOrd.PurchaseOrderType                   as PurchaseOrderType,
       _PurOrd.Supplier                            as Supplier,

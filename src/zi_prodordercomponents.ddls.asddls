@@ -23,7 +23,7 @@ define view entity ZI_ProdOrderComponents
       _Comp.MatlCompRequirementDate         as MatlCompRequirementDate,
       _Comp.RequirementType                 as RequirementType,
       _Comp.BOMExplosionDateID              as BOMExplosionDateID,
-      _Comp.Assembly                        as Assembly,
+      cast(_Comp.Assembly as abap.char(40)) as Assembly,
       _Comp.BaseUnit                        as BaseUnit,
       @Semantics.quantity.unitOfMeasure: 'BaseUnit'
       _Comp.RequiredQuantity                as RequiredQuantity,

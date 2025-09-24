@@ -23,6 +23,11 @@ define view entity ZC_KX_PurchaseOrders
       PurchaseOrderQuantityUnit,
       @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
       MRPRelevantQuantity,
+      @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
+      StockTransferDeliveredQuantity,
+      @Semantics.quantity.unitOfMeasure: 'PurchaseOrderQuantityUnit'
+      ScheduleLineIssuedQuantity,
+      ProductAvailabilityDate,
 
       Material,
       Plant,
@@ -34,6 +39,7 @@ define view entity ZC_KX_PurchaseOrders
       DocumentCurrency,
       @Semantics.amount.currencyCode: 'DocumentCurrency'
       NetPriceAmount,
+      Reservation,
 
       PurchaseOrderType,
       Supplier,
