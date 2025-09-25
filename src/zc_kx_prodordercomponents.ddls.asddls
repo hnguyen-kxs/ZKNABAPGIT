@@ -15,10 +15,11 @@ define view entity ZC_KX_ProdOrderComponents
   key ReservationItem,
   key ReservationRecordType,
   key ManufacturingOrder,
+  key ManufacturingOrderItem,
       ReservationMaterial,
       Plant,
       ManufacturingOrderType,
-      
+
       MatlCompRequirementDate,
       RequirementType,
       BOMExplosionDateID,

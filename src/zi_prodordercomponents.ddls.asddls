@@ -16,6 +16,7 @@ define view entity ZI_ProdOrderComponents
   key _Comp.ReservationItem                 as ReservationItem,
   key _Comp.ReservationRecordType           as ReservationRecordType,
   key _Item.ManufacturingOrder              as ManufacturingOrder,
+  key _Item.ManufacturingOrderItem          as ManufacturingOrderItem,
       cast(_Comp.Material as abap.char(40)) as ReservationMaterial,
       _Comp.Plant                           as Plant,
       _Comp.ManufacturingOrderType          as ManufacturingOrderType,
