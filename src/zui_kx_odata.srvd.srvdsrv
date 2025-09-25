@@ -19,8 +19,10 @@ define service ZUI_KX_ODATA {
   expose ZC_KX_ProdVersionPartSource;
   expose ZC_KX_PurchaseContracts;
   expose ZC_KX_PurchaseOrders;
+  expose ZC_KX_PurchaseOrderComponents;
   expose ZC_KX_PurchaseRequisitions;
   expose ZC_KX_QuotaPartSource;
+  expose ZC_KX_Reservations;
   expose ZC_KX_SalesOrders;
   expose ZC_KX_SchedulingAgreements;
   expose ZC_KX_Suppliers;

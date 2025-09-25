@@ -16,6 +16,7 @@ define view entity ZC_KX_BillOfMaterialSalesBOM
   key BillOfMaterial,
   key BillOfMaterialItemNodeNumber,
   key BillOfMaterialVariant,
+  key BillOfMaterialVariantUsage,
   key Material,
   key Plant,
   key SalesDocument,

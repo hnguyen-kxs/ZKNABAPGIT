@@ -25,38 +25,39 @@ define view entity ZI_BillOfMaterialSalesBOM
                                                            and _BOMLink.SalesOrderItem    =  _SalesItem.SalesDocumentItem
                                                            and _SalesItem.SDProcessStatus != 'C'
 {
-  key    _BOMItem.BillOfMaterialCategory                             as BillOfMaterialCategory,
-  key    cast(_BOMItem.BillOfMaterial as abap.char(8))               as BillOfMaterial,
-  key    cast(_BOMItem.BillOfMaterialItemNodeNumber as abap.char(8)) as BillOfMaterialItemNodeNumber,
+  key       _BOMItem.BillOfMaterialCategory                             as BillOfMaterialCategory,
+  key       cast(_BOMItem.BillOfMaterial as abap.char(8))               as BillOfMaterial,
+  key       cast(_BOMItem.BillOfMaterialItemNodeNumber as abap.char(8)) as BillOfMaterialItemNodeNumber,
 
-  key    _BOMLink.BillOfMaterialVariant                              as BillOfMaterialVariant,
-  key    cast(_BOMLink.Material as abap.char(40))                    as Material,
-  key    _BOMLink.Plant                                              as Plant,
+  key       _BOMLink.BillOfMaterialVariant                              as BillOfMaterialVariant,
+  key       cast(_BOMLink.Material as abap.char(40))                    as Material,
+  key       _BOMLink.Plant                                              as Plant,
+  key       _BOMLink.BillOfMaterialVariantUsage                         as BillOfMaterialVariantUsage,
 
-  key    _SalesItem.SalesDocument                                    as SalesDocument,
-  key    _SalesItem.SalesDocumentItem                                as SalesDocumentItem,
+  key       _SalesItem.SalesDocument                                    as SalesDocument,
+  key       _SalesItem.SalesDocumentItem                                as SalesDocumentItem,
 
-         _BOMItem.ValidityStartDate                                  as ValidityStartDate,
-         _BOMItem.ValidityEndDate                                    as ValidityEndDate,
-         _BOMItem.EngineeringChangeDocument                          as EngineeringChangeDocument,
-         _BOMItem.ChgToEngineeringChgDocument                        as ChgToEngineeringChgDocument,
-         cast(_BOMItem.BillOfMaterialComponent as abap.char(40))     as BillOfMaterialComponent,
-         cast(_BOMItem.BillOfMaterialItemNumber as abap.char(4))     as BillOfMaterialItemNumber,
-         _BOMItem.BillOfMaterialItemUnit                             as BillOfMaterialItemUnit,
-         @Semantics.quantity.unitOfMeasure: 'BillOfMaterialItemUnit'
-         _BOMItem.BillOfMaterialItemQuantity                         as BillOfMaterialItemQuantity,
-         _BOMItem.ComponentScrapInPercent                            as ComponentScrapInPercent,
-         _BOMItem.IsBulkMaterial                                     as IsBulkMaterial,
-         _BOMItem.SpecialProcurementType                             as SpecialProcurementType,
-         _BOMItem.MaterialIsCoProduct                                as MaterialIsCoProduct,
-         _BOMItem.LeadTimeOffset                                     as LeadTimeOffset,
-         _BOMItem.AlternativeItemGroup                               as AlternativeItemGroup,
-         _BOMItem. AlternativeItemPriority                           as AlternativeItemPriority,
-         _BOMItem.UsageProbabilityPercent                            as UsageProbabilityPercent,
+            _BOMItem.ValidityStartDate                                  as ValidityStartDate,
+            _BOMItem.ValidityEndDate                                    as ValidityEndDate,
+            _BOMItem.EngineeringChangeDocument                          as EngineeringChangeDocument,
+            _BOMItem.ChgToEngineeringChgDocument                        as ChgToEngineeringChgDocument,
+            cast(_BOMItem.BillOfMaterialComponent as abap.char(40))     as BillOfMaterialComponent,
+            cast(_BOMItem.BillOfMaterialItemNumber as abap.char(4))     as BillOfMaterialItemNumber,
+            _BOMItem.BillOfMaterialItemUnit                             as BillOfMaterialItemUnit,
+            @Semantics.quantity.unitOfMeasure: 'BillOfMaterialItemUnit'
+            _BOMItem.BillOfMaterialItemQuantity                         as BillOfMaterialItemQuantity,
+            _BOMItem.ComponentScrapInPercent                            as ComponentScrapInPercent,
+            _BOMItem.IsBulkMaterial                                     as IsBulkMaterial,
+            _BOMItem.SpecialProcurementType                             as SpecialProcurementType,
+            _BOMItem.MaterialIsCoProduct                                as MaterialIsCoProduct,
+            _BOMItem.LeadTimeOffset                                     as LeadTimeOffset,
+            _BOMItem.AlternativeItemGroup                               as AlternativeItemGroup,
+            _BOMItem. AlternativeItemPriority                           as AlternativeItemPriority,
+            _BOMItem.UsageProbabilityPercent                            as UsageProbabilityPercent,
 
-         _BOMHeader.BOMHeaderBaseUnit                                as BOMHeaderBaseUnit,
-         @Semantics.quantity.unitOfMeasure: 'BOMHeaderBaseUnit'
-         _BOMHeader.BOMHeaderQuantityInBaseUnit
+            _BOMHeader.BOMHeaderBaseUnit                                as BOMHeaderBaseUnit,
+            @Semantics.quantity.unitOfMeasure: 'BOMHeaderBaseUnit'
+            _BOMHeader.BOMHeaderQuantityInBaseUnit
 }
 where
       _BOMItem.IsDeleted                     =  ''
