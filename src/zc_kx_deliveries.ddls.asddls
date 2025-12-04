@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Delivery - Consumption'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{

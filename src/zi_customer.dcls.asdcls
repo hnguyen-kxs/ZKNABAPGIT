@@ -1,0 +1,12 @@
+@EndUserText.label: 'Access control for ZI_Customer'
+@MappingRole: true
+define role ZI_CUSTOMER {
+    grant
+        select
+            on
+                ZI_Customer
+    where ( ) = 
+    aspect pfcg_auth (  F_KNA1_GEN,
+                        actvt = '03' );
+                        
+}

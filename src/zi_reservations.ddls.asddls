@@ -1,12 +1,15 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Reservations - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Material Reservations'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #COMPOSITE
+
 define view entity ZI_Reservations
   as select from I_ReservationDocumentItem as _Res
 {

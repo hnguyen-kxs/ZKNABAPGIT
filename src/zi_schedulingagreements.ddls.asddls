@@ -1,13 +1,14 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'SchedulingAgreements - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Scheduling Agreements'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_SchedulingAgreements
   as select from    I_SchedgagrmthdrApi01        as _Sched
     inner join      I_SchedgAgrmtItmApi01        as _Item    on _Sched.SchedulingAgreement = _Item.SchedulingAgreement

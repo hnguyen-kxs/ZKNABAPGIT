@@ -1,13 +1,13 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Material Stock - Basic'
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Material Stock'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 
 define view entity ZI_MaterialStock
   as select from    I_MaterialStock_2 as _MatStock

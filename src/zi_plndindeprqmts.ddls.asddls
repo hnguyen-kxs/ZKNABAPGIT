@@ -1,5 +1,5 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Planned Independent Req - Basic'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
@@ -7,7 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_PlndIndepRqmts
   as select from I_PlndIndepRqmtByIntKey     as _Header
     inner join   I_PlndIndepRqmtItemByIntKey as _Item on _Header.PlndIndepRqmtInternalID = _Item.PlndIndepRqmtInternalID

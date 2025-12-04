@@ -1,13 +1,14 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Purchase Requisition - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Purchase Requisition'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_PurchaseRequisitions
   as select from I_PurchaseRequisitionItemAPI01
 {

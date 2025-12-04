@@ -1,6 +1,7 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'ProductVersion PartSource - Consumption'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'ProductVersion Part Source - Consumption'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,

@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZI_ProdVersionPartSource'
+@MappingRole: true
+define role ZI_PRODVERSIONPARTSOURCE {
+    grant 
+        select
+            on
+                ZI_ProdVersionPartSource
+            where ( Plant ) = aspect pfcg_auth ( C_FVER_WRK, werks,  actvt = '03' )
+            and   ( )       = aspect pfcg_auth ( M_MATE_MAN, ACTVT = '03' )
+            and   ( )       = aspect pfcg_auth( M_MATE_STA, STATM = 'D' , ACTVT = '03' );
+  }

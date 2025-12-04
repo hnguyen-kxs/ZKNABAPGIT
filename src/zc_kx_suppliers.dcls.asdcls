@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_Suppliers'
+@MappingRole: true
+define role ZC_KX_SUPPLIERS {
+    grant
+        select
+            on
+                ZC_KX_Suppliers
+                    where
+                        inheriting conditions from entity ZI_Suppliers;
+                        
+}

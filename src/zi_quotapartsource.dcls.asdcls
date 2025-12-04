@@ -1,0 +1,55 @@
+@EndUserText.label: 'DCL for ZI_QuotaPartSource'
+@MappingRole: true
+define role ZI_QUOTAPARTSOURCE {
+    grant 
+        select
+            on
+                ZI_QuotaPartSource
+  where ( Plant ) = 
+                        aspect pfcg_auth (  M_QUOT_WRK,
+                                            WERKS,                      
+                                            actvt = '03' )
+    and
+      
+            ( ) = aspect pfcg_auth (  M_MATE_MAN, ACTVT = '03' )
+    and   
+            ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'D' , ACTVT = '03' ) 
+    and
+        (
+            ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'B' , ACTVT = '03' )
+          or
+            ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'G' , ACTVT = '03' )
+        )
+    and 
+            ( Plant ) = aspect pfcg_auth ( M_MATE_WRK, werks, actvt = '03' )
+//    and 
+//        ( _Product.AuthorizationGroup ) ?= aspect pfcg_auth ( M_MATE_MAT, begru, actvt = '03' )
+//    and 
+//        ( _Product._ProductType_2.AuthorizationGroup  )   ?= aspect pfcg_auth ( M_MATE_MAR, BEGRU, actvt = '03' ) 
+//    and 
+//        ( _Product._ProductGroup_2.AuthorizationGroup )   ?= aspect pfcg_auth ( M_MATE_WGR, begru, actvt = '03' )
+    
+    
+//      ( AuthorizationGroup ) ?= aspect pfcg_auth ( F_LFA1_BEK, BRGRU, actvt = '03' )
+//    and 
+//    ( IsBusinessPurposeCompleted ?= ' '
+//      OR IsBusinessPurposeCompleted = 'X' and ( ) = aspect pfcg_auth(  B_BUP_PCPT, actvt = '03')
+//    )
+//    and
+//    (  
+//      ( DataControllerSet is initial )
+//      or 
+//      ( if ( ( custom_configuration_values( entity => I_BPDataControllerPrpsConfign, field => config_value, quantifier => exists ) = 'X' ) 
+//               or ( toggle_runtime_state( name => BUPA_DC_PURP_HDR_CHECK ) is not initial ) )
+//          then { 
+//                ( { Supplier } ) = aspect pfcg_auth( B_BUP_DCPD, pfcg_mapping = I_SuplDataControllerPrpsAuth, ACTVT = '03' )
+//          }
+//          else { 
+//                if ( ( custom_configuration_values( entity => I_BPDataControllerPrpsConfign, field => config_value, quantifier => exists ) = 'X' ) 
+//                   or ( toggle_runtime_state( name => BUPA_DATA_CONTROLLER ) is not initial ) )
+//                then { ( { Supplier } ) = aspect pfcg_auth( B_BUP_DCPD, pfcg_mapping = I_SuplDataControllerAuth, ACTVT = '03' ) }
+//                else { false } 
+//          } 
+//      ) 
+   ;                                              
+}

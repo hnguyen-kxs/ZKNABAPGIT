@@ -1,0 +1,14 @@
+@EndUserText.label: 'DCL for ZI_PlannedOrders'
+@MappingRole: true
+define role ZI_PLANNEDORDERS {
+    grant 
+        select
+            on
+                ZI_PlannedOrders
+    where ( 
+            MRPPlant ) =
+    aspect pfcg_auth ( M_PLAF_ORG,
+                       dispo = '*',
+                       werks,
+                       mdakt = 'A' );
+}                       

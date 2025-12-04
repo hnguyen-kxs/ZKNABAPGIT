@@ -1,0 +1,14 @@
+@EndUserText.label: 'DCL for ZI_PurchaseOrderComponents'
+@MappingRole: true
+define role ZI_PURCHASEORDERCOMPONENTS {
+    grant 
+        select
+            on
+                ZI_PurchaseOrderComponents
+                                        where 
+                        ( Plant ) =  aspect pfcg_auth ( M_MRES_WWA, 
+                        werks, 
+                        actvt = '03' )
+  and ( ) = aspect pfcg_auth ( M_MRES_BWA, actvt = '03' )
+ ; 
+}

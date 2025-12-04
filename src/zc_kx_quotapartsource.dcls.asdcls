@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_QuotaPartSource'
+@MappingRole: true
+define role ZC_KX_QUOTAPARTSOURCE {
+    grant
+        select
+            on
+                ZC_KX_QuotaPartSource
+                    where
+                        inheriting conditions from entity ZI_QuotaPartSource;
+                        
+}

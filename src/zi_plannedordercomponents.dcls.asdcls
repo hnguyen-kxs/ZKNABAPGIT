@@ -1,0 +1,12 @@
+@EndUserText.label: 'DCL for ZI_PlannedOrderComponents'
+@MappingRole: true
+define role ZI_PLANNEDORDERCOMPONENTS {
+    grant 
+        select
+            on
+                ZI_PlannedOrderComponents
+                    where ( Plant ) = aspect pfcg_auth ( M_PLAF_ORG,
+                                                         dispo = '*',
+                                                         werks,
+                                                         mdakt = 'A' );                        
+}

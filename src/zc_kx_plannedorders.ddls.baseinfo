@@ -3,7 +3,7 @@
 {
 "FROM":
 [
-"I_PLANNEDORDER"
+"ZI_PLANNEDORDERS"
 ],
 "ASSOCIATED":
 [],

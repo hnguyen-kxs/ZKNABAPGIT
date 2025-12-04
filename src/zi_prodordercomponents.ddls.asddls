@@ -1,13 +1,13 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'ProdOrderComponents - Basic'
+@EndUserText.label: 'Production Order Components View'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_ProdOrderComponents
   as select from I_MfgOrderComponentWithStatus as _Comp
     inner join   I_ManufacturingOrderItem      as _Item on _Comp.ManufacturingOrder = _Item.ManufacturingOrder

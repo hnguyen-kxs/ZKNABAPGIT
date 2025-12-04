@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_SchedulingAgreements'
+@MappingRole: true
+define role ZC_KX_SCHEDULINGAGREEMENTS {
+    grant
+        select
+            on
+                ZC_KX_SchedulingAgreements
+                    where
+                        inheriting conditions from entity ZI_SchedulingAgreements;
+                        
+}

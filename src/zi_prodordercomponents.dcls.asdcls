@@ -1,0 +1,25 @@
+@EndUserText.label: 'DCL for ZI_ProdOrderComponents'
+@MappingRole: true
+define role ZI_PRODORDERCOMPONENTS {
+    grant 
+        select
+            on
+                ZI_ProdOrderComponents
+    where ( ) =
+    aspect pfcg_auth ( C_AFKO_ATY,
+    
+                       autyp = '*',
+                       actvt = '03' )
+    and ( ManufacturingOrderType,
+          Plant ) =
+    aspect pfcg_auth ( C_AFKO_AWA,
+                       aufart,
+                       autyp = '*',
+                       werks,
+                       actvt = '03' )
+    and ( ManufacturingOrderType,
+          Plant ) =
+    aspect pfcg_auth ( C_AFKO_AWK,
+                       aufart,
+                       werks );
+  }

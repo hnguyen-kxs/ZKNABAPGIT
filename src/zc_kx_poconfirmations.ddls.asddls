@@ -1,6 +1,6 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'POConfirmation - Consumption'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'PO Confirmation - Consumption'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,

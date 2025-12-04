@@ -1,0 +1,24 @@
+@EndUserText.label: 'DCL for ZI_ProductPlantPart'
+@MappingRole: true
+define role ZI_PRODUCTPLANTPART {
+    grant 
+        select
+            on
+                ZI_ProductPlantPart
+    where
+        (  ) = aspect pfcg_auth (  M_MATE_MAN, ACTVT = '03' )
+    and   
+        ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'D' , ACTVT = '03' ) 
+    and  ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'A' , ACTVT = '03' )     
+
+    and
+        (
+          ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'B' , ACTVT = '03' )
+          or
+          ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'G' , ACTVT = '03' )
+
+   and
+        ( Plant ) = aspect pfcg_auth ( M_MATE_WRK, werks, actvt = '03' ));
+        
+    
+}

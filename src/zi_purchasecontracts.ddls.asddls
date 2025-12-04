@@ -1,13 +1,14 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'ZI_PurchaseContracts'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Purchase Contracts View'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_PurchaseContracts
   as select from    I_PurchaseContractAPI01      as _Contr
     inner join      I_PurchaseContractItemAPI01  as _Item    on _Contr.PurchaseContract = _Item.PurchaseContract
@@ -88,3 +89,4 @@ where
       _Contr.ValidityEndDate                >= $session.system_date
   and _Contr.PurchasingDocumentDeletionCode =  ''
   and _Item.Material                        <> ''
+  and _Suppl.IsBusinessPurposeCompleted = ''                            //Personal Data Protection filter

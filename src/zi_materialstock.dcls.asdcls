@@ -1,0 +1,13 @@
+@EndUserText.label: 'DCL for ZI_MaterialStock'
+@MappingRole: true
+define role ZI_MATERIALSTOCK {
+    grant
+        select
+            on
+                ZI_MaterialStock
+    where ( Plant ) = 
+    aspect pfcg_auth (  m_mate_wrk,
+                        werks,
+                        actvt = '03' );
+                        
+}

@@ -1,5 +1,6 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'ZC_KX_PurchaseOrderComponents'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
@@ -10,26 +11,25 @@
 define view entity ZC_KX_PurchaseOrderComponents
   as select from ZI_PurchaseOrderComponents
 {
-  key Reservation,
-  key ReservationItem,
-  key RecordType,
-      ReservationMaterial,
-      RequirementType,
-      MatlCompRequirementDate,
-      Plant,
-      StorageLocation,
-      BaseUnit,
-      @Semantics.quantity.unitOfMeasure: 'BaseUnit'
-      ResvnItmRequiredQtyInBaseUnit,
-      @Semantics.quantity.unitOfMeasure: 'BaseUnit'
-      ResvnItmWithdrawnQtyInBaseUnit,
+  key     Reservation,
+  key     ReservationItem,
+  key     RecordType,
+  key     PurchaseOrder,
+  key     PurchaseOrderItem,
+  key     PurchaseOrderScheduleLine,
+          ReservationMaterial,
+          RequirementDate,
+          ReservationPlant,
+          StorageLocation,
+          BaseUnit,
+          @Semantics.quantity.unitOfMeasure: 'BaseUnit'
+          RequiredQuantity,
+          @Semantics.quantity.unitOfMeasure: 'BaseUnit'
+          WithdrawnQuantity,
 
-      PurchaseOrder,
-      PurchaseOrderItem,
-      PurchaseOrderScheduleLine,
-      PurchaseOrderQuantityUnit,
-      PurchaseOrderMaterial,
-      PurchaseOrderPlant,
-      PurchaseOrderType,
-      PurchaseOrderSupplyingPlant
+          PurchaseOrderQuantityUnit,
+          Material,
+          Plant,
+          PurchaseOrderType,
+          SupplyingPlant
 }

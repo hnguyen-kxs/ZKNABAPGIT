@@ -1,13 +1,13 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'ProductPlant Part - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Product Plant Part'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 
 define view entity ZI_ProductPlantPart
   as select from    I_ProductPlantSupplyPlanning as _SupPlan

@@ -1,0 +1,30 @@
+@EndUserText.label: 'DCL for ZI_SalesOrders'
+@MappingRole: true
+define role ZI_SALESORDERS {
+    grant 
+        select
+            on
+                ZI_SalesOrders
+    where ( SalesDocumentType ) =
+    aspect pfcg_auth (  v_vbak_aat,
+                        auart,
+                        actvt = '03' )
+    and
+           (  ) =
+    aspect pfcg_auth(   v_vbak_vko,
+                        actvt = '03' ) 
+ 
+and ( ) = 
+    aspect pfcg_auth (  F_KNA1_GEN,
+                        actvt = '03' )
+   and
+   (  ) = 
+    aspect pfcg_auth (  F_KNA1_GRP,
+                       
+                        actvt = '03' )
+   and
+   (  ) = 
+    aspect pfcg_auth (  F_KNA1_BED,                       
+                        actvt = '03' ) 
+   
+;}

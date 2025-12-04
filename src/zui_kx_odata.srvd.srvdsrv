@@ -27,4 +27,5 @@ define service ZUI_KX_ODATA {
   expose ZC_KX_SchedulingAgreements;
   expose ZC_KX_Suppliers;
   expose ZC_KX_UnitOfMeasure;
+  expose ZC_KX_FactoryCalendar;
 }

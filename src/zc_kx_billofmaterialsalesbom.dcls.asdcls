@@ -1,0 +1,10 @@
+@EndUserText.label: 'DCL for ZC_KX_BillOfMaterialSalesBOM'
+@MappingRole: true
+define role ZC_KX_BILLOFMATERIALSALESBOM {
+    grant
+        select
+            on
+                ZC_KX_BillOfMaterialSalesBOM
+                    where
+                        inheriting conditions from entity ZI_BillOfMaterialSalesBOM;                        
+}

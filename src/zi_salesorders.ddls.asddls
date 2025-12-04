@@ -1,13 +1,14 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'SalesOrders - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Sales Orders'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_SalesOrders
   as select from    I_SalesDocumentScheduleLine    as _SalesOrd
     inner join      I_SDScheduleLineWthOpenRqmtQty as _OpenQty   on  _SalesOrd.SalesDocument     = _OpenQty.SalesDocument
@@ -89,3 +90,4 @@ where
   and  _SalesItem.SDDocumentCategory          =  'C'
   or   _SalesItem.SDDocumentCategory          =  'E'
   or   _SalesItem.SDDocumentCategory          =  'I'
+  and _Customer.IsBusinessPurposeCompleted    =  ' '

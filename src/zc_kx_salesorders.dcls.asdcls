@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_SalesOrders'
+@MappingRole: true
+define role ZC_KX_SALESORDERS {
+    grant
+        select
+            on
+                ZC_KX_SalesOrders
+                    where
+                        inheriting conditions from entity ZI_SalesOrders;
+                        
+}

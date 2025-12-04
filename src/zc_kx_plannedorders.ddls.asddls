@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Planned Order - Consumption'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
@@ -7,9 +7,9 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #CONSUMPTION
 define view entity ZC_KX_PlannedOrders
-  as select from I_PlannedOrder
+  as select from ZI_PlannedOrders
 {
   key PlannedOrder,
       PlannedOrderType,

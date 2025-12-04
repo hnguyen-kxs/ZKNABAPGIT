@@ -1,0 +1,10 @@
+@EndUserText.label: 'DCL for ZC_KX_PartUoM'
+@MappingRole: true
+define role ZC_KX_PARTUOM {
+    grant
+        select
+            on
+                ZC_KX_PartUoM
+                    where
+                        inheriting conditions from entity ZI_PartUoM;                        
+}

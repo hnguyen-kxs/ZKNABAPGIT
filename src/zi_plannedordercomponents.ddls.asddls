@@ -1,13 +1,13 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'PlannedOrderComponents - Basic'
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'PlannedOrderComponents'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_PlannedOrderComponents
   as select from I_PlannedOrderComponent as _Comp
     inner join   I_PlannedOrder          as _Ord on _Comp.PlannedOrder = _Ord.PlannedOrder

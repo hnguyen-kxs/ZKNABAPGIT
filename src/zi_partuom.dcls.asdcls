@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZI_PartUoM'
+@MappingRole: true
+define role ZI_PARTUOM {
+    grant 
+        select
+            on
+                ZI_PartUoM
+                  where (  ) = aspect pfcg_auth (  M_MATE_MAN, ACTVT = '03' )                  
+                  and   ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'D' , ACTVT = '03' ) 
+                  and   ( Plant ) = aspect pfcg_auth ( M_MATE_WRK, werks, actvt = '03' );
+}

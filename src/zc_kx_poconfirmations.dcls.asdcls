@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_POConfirmations'
+@MappingRole: true
+define role ZC_KX_POCONFIRMATIONS {
+    grant
+        select
+            on
+                ZC_KX_POConfirmations
+                    where
+                        inheriting conditions from entity ZI_POConfirmations;
+                        
+}

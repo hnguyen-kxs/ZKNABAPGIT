@@ -1,13 +1,14 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'UnitOfMeasure - Basic'
+@EndUserText.label: 'UnitOfMeasure '
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 
 define view entity ZI_UnitOfMeasure
   as select from I_UnitOfMeasure

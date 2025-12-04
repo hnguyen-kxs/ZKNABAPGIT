@@ -1,0 +1,30 @@
+@EndUserText.label: 'DCL for ZI_BillOfMaterial'
+@MappingRole: true
+define role ZI_BILLOFMATERIAL {
+    grant
+        select
+            on ZI_BILLOFMATERIAL
+                where ( BillOfMaterialCategory) = 
+         aspect pfcg_auth (  c_stue_ber,
+                        stlty,
+                        actvt = '03' )
+
+// Condition from DCL I_Materialbomlink                        
+
+          and ( BillOfMaterialCategory,
+                  BillOfMaterialVariantUsage
+                ) = 
+            aspect pfcg_auth (  c_stue_ber,
+                        stlty,
+                        stlan,
+                        actvt = '03' )
+                        
+        and (  ) = aspect pfcg_auth (  M_MATE_MAN, ACTVT = '03' )
+
+// Condition from DCL I_ProductionVersion          
+        and ( Plant ) =
+            aspect pfcg_auth (  C_FVER_WRK,
+                                werks,
+                                actvt = '03' );                                     
+}
+

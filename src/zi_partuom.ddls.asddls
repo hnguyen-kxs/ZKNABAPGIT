@@ -1,6 +1,6 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'PartUOM - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Part Unit Of Measure' 
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
@@ -32,5 +32,4 @@ define view entity ZI_PartUoM
       _UOM.UnitOfMeasureDimension             as UnitOfMeasureDimension,
       _UOM.SIUnitCnvrsnRateNumerator          as SIUnitCnvrsnRateNumerator,
       _UOM.SIUnitCnvrsnRateDenominator        as SIUnitCnvrsnRateDenominator
-
 }

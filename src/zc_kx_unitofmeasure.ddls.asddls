@@ -1,4 +1,5 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Unit of Measure - Consumption'
 @Metadata.ignorePropagatedAnnotations: true

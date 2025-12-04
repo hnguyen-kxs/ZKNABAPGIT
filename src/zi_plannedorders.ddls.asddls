@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Planned Order - Basic'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
@@ -7,7 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_PlannedOrders
   as select from I_PlannedOrder
 {

@@ -1,0 +1,25 @@
+@EndUserText.label: 'DCL for ZI_ProductionOrders'
+@MappingRole: true
+define role ZI_PRODUCTIONORDERS {
+    grant 
+        select
+            on
+                ZI_ProductionOrders
+    where ( ManufacturingOrderCategory ) =
+    aspect pfcg_auth ( C_AFKO_ATY,
+                       autyp,
+                       actvt = '03' )
+    and ( ManufacturingOrderType,
+          ManufacturingOrderCategory,
+          ProductionPlant ) =
+    aspect pfcg_auth ( C_AFKO_AWA,
+                       aufart,
+                       autyp,
+                       werks,
+                       actvt = '03' )
+    and ( ManufacturingOrderType,
+          ProductionPlant ) =
+    aspect pfcg_auth ( C_AFKO_AWK,
+                       aufart,
+                       werks );
+  }

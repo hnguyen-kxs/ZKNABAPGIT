@@ -1,0 +1,31 @@
+@EndUserText.label: 'DCL for ZI_PurchaseRequisitions'
+@MappingRole: true
+define role ZI_PURCHASEREQUISITIONS {
+    grant
+        select
+            on
+                ZI_PurchaseRequisitions
+where 
+   ( PurchaseRequisitionType ) =
+    aspect pfcg_auth (  M_BANF_BSA,
+                        BSART,
+                        actvt = '03' )
+    and                    
+     ( Plant ) ?= 
+    aspect pfcg_auth (  M_BANF_WRK,
+                        WERKS,
+                        actvt = '03' )
+//     and                    
+//     ( PurchasingOrganization ) ?= 
+//    aspect pfcg_auth (  M_BANF_EKO,
+//                        EKORG,
+//                        actvt = '03' )
+//    and
+//         ( PurchasingGroup ) ?=
+//    aspect pfcg_auth (  M_BANF_EKG,
+//                        EKGRP,
+//                        actvt = '03' )
+//                        
+                        ;  
+                        
+}

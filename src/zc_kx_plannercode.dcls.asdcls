@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_PlannerCode'
+@MappingRole: true
+define role ZC_KX_PLANNERCODE {
+    grant
+        select
+            on
+                ZC_KX_PlannerCode
+                    where
+                        inheriting conditions from entity ZI_PlannerCode;
+                        
+}

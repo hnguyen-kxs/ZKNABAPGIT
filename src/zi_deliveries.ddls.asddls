@@ -1,13 +1,13 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Delivery - Basic'
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Delivery'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_Deliveries
   as select from I_DeliveryDocumentItem         as _Item
     inner join   I_DeliveryDocument             as _Header   on _Item.DeliveryDocument = _Header.DeliveryDocument

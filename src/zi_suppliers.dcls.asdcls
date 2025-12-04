@@ -1,0 +1,51 @@
+@EndUserText.label: 'DCL for ZI_Suppliers'
+@MappingRole: true
+define role ZI_SUPPLIERS {
+    grant 
+        select
+            on
+                ZI_Suppliers
+                        where   (  ) =
+    aspect pfcg_auth ( F_LFA1_GEN,   
+                       ACTVT = '03' );       
+
+//   and ( SupplierAccountGroup ) =
+//    aspect pfcg_auth (  F_LFA1_GRP,
+//                        KTOKK,
+//                        actvt = '03' ) 
+//
+//   and ( AuthorizationGroup ) ?=
+//    aspect pfcg_auth (  F_LFA1_BEK,
+//                        BRGRU,
+//                        actvt = '03' ) 
+   // and ( _BusinessPartnerAddress._BPProtectedAddress.BPAddressIsProtected ) ?= aspect pfcg_auth( B_BUPA_ADR, SENSTVT, actvt = '03' ) 
+                                                                       
+//   and ( ( ) = aspect pfcg_auth(  B_BUP_PCPT, actvt = '03') 
+//   or IsBusinessPurposeCompleted  <> 'X' ) 
+//   
+//    and       
+//        (  
+//          ( DataControllerSet is initial )
+//          or
+//          (  
+//           if ( ( custom_configuration_values(  entity => I_BPDataControllerPrpsConfign, field => config_value, quantifier => exists ) = 'X' ) OR
+//                ( TOGGLE_RUNTIME_STATE( name => BUPA_DC_PURP_HDR_CHECK ) IS not initial ) )
+//            then
+//            { 
+//              ( { Supplier } ) = aspect pfcg_auth ( B_BUP_DCPD,  pfcg_mapping = I_SuplDataControllerPrpsAuth ,  ACTVT =  '03' ) 
+//            }
+//           else  
+//            {    
+//             if ( ( custom_configuration_values(  entity => I_BPDataControllerConfig, field => config_value, quantifier => exists ) = 'X' ) OR
+//                  ( TOGGLE_RUNTIME_STATE( name => BUPA_DATA_CONTROLLER ) IS not initial ) )
+//              then
+//              { 
+//                ( { Supplier } ) = aspect pfcg_auth ( B_BUP_DCPD,  pfcg_mapping = I_SuplDataControllerAuth ,  ACTVT =  '03' ) 
+//              }
+//             else
+//              {  
+//                false
+//              }  
+//            }
+//          )
+    }

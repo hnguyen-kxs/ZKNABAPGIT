@@ -1,0 +1,14 @@
+@EndUserText.label: 'DCL for ZI_Reservations'
+@MappingRole: true
+define role ZI_RESERVATIONS {
+    grant 
+        select
+            on
+                ZI_Reservations
+                    where 
+                        ( Plant ) =  aspect pfcg_auth ( M_MRES_WWA, 
+                        werks, 
+                        actvt = '03' )
+  and ( GoodsMovementType ) = aspect pfcg_auth ( M_MRES_BWA, bwart, actvt = '03' )
+ ; 
+}

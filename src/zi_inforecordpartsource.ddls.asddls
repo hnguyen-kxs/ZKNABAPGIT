@@ -1,13 +1,13 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'InfoRecord PartSource - Basic'
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'InfoRecord PartSource'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 
 define view entity ZI_InfoRecordPartSource
   as select from    I_PurgInfoRecdOrgPlntDataApi01 as _InfoRec

@@ -1,0 +1,37 @@
+@EndUserText.label: 'DCL for ZI_PurchaseContracts'
+@MappingRole: true
+define role ZI_PURCHASECONTRACTS {
+    grant 
+        select
+            on
+                ZI_PurchaseContracts
+where 
+
+  ( PurchaseContractType ) = 
+  aspect pfcg_auth ( M_RAHM_BSA, 
+            BSART,         
+            actvt = '03' )
+  and 
+  
+  ( PurchasingOrganization ) =
+  aspect pfcg_auth ( M_RAHM_EKO,
+            EKORG,
+            actvt = '03' )
+  and    
+   ( Plant ) =
+   aspect pfcg_auth (  M_RAHM_WRK,
+                        WERKS,
+                        actvt = '03' )
+   and
+        (  ) = aspect pfcg_auth (  M_MATE_MAN, ACTVT = '03' )
+    and   
+        ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'D' , ACTVT = '03' ) 
+            and
+        (
+          ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'B' , ACTVT = '03' )
+          or
+          ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'G' , ACTVT = '03' )
+        )
+    and 
+        ( Plant ) = aspect pfcg_auth ( M_MATE_WRK, werks, actvt = '03' );                         
+ }

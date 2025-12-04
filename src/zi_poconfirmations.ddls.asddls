@@ -1,13 +1,13 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'POConfirmation - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'PO Confirmation'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_POConfirmations
   as select from    I_POSupplierConfirmationAPI01 as _POConf
     inner join      I_PurchaseOrderItemAPI01      as _POItem   on  _POConf.PurchaseOrder     = _POItem.PurchaseOrder

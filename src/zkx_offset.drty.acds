@@ -1,0 +1,2 @@
+@EndUserText.label: 'CDS type for Offset'
+define type ZKX_OFFSET : abap.char( 2 )

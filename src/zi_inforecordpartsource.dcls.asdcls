@@ -1,0 +1,32 @@
+@EndUserText.label: 'DCL for ZI_INFORECORDPARTSOURCE'
+@MappingRole: true
+define role ZI_INFORECORDPARTSOURCE {
+    grant 
+        select
+            on
+                ZI_INFORECORDPARTSOURCE
+  where
+     ( PurchasingGroup ) =
+    aspect pfcg_auth (  M_EINF_EKG,
+                        EKGRP,
+                        actvt = '03' ) 
+    and                     
+     ( PurchasingOrganization ) =
+    aspect pfcg_auth (  M_EINF_EKO,
+                        EKORG,
+                        actvt = '03' )                        
+    and                     
+     ( Plant ) =
+    aspect pfcg_auth (  M_EINF_WRK, 
+                        WERKS,
+                        actvt = '03' )
+   and                       
+     (  ) = aspect pfcg_auth (  M_MATE_MAN, ACTVT = '03' )
+    and   
+      ( ) = aspect pfcg_auth( M_MATE_STA, STATM = 'D' , ACTVT = '03' ) 
+// I_Supplier
+    
+    and
+       (  ) =   aspect pfcg_auth ( F_LFA1_GEN,   
+                       ACTVT = '03' );    
+}

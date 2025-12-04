@@ -1,0 +1,13 @@
+@EndUserText.label: 'DCL for ZI_BillOfMaterialSalesBOM'
+@MappingRole: true
+define role ZI_BILLOFMATERIALSALESBOM {
+    grant 
+        select
+            on
+                ZI_BillOfMaterialSalesBOM
+                    where ( BillOfMaterialCategory) = 
+         aspect pfcg_auth (  c_stue_ber,
+                        stlty,
+                        actvt = '03' );                       
+}
+

@@ -1,5 +1,6 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Quota PartSource - Basic'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
@@ -7,7 +8,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 
 define view entity ZI_QuotaPartSource
   as select from    I_PurgQuotaArrgmtAPI01       as _Quota
@@ -79,3 +80,4 @@ define view entity ZI_QuotaPartSource
 }
 where
   _Quota.ValidityEndDate >= $session.system_date
+ and _Supplier.IsBusinessPurposeCompleted = ''                //Personal data protection filter

@@ -1,0 +1,9 @@
+@EndUserText.label: 'DCL for ZI_PlannerCode'
+@MappingRole: true
+define role ZI_PLANNERCODE {
+    grant
+        select
+            on
+                ZI_PlannerCode
+  where Plant is null and Plant is not null;
+}

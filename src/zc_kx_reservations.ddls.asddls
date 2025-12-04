@@ -1,5 +1,6 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Reservations - Consumption'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
@@ -7,6 +8,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #CONSUMPTION
 define view entity ZC_KX_Reservations
   as select from ZI_Reservations
 {

@@ -1,0 +1,14 @@
+@EndUserText.label: 'DCL for ZI_Deliveries'
+@MappingRole: true
+define role ZI_DELIVERIES {
+    grant 
+        select
+            on
+                ZI_Deliveries
+                
+// Check for I_Customer join                
+    where   ( ) = 
+    aspect pfcg_auth (  F_KNA1_GEN,
+                        actvt = '03' );
+
+}

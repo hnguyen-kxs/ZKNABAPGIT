@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_InfoRecordPartSource'
+@MappingRole: true
+define role ZC_KX_INFORECORDPARTSOURCE {
+    grant
+        select
+            on
+                ZC_KX_InfoRecordPartSource
+                    where
+                        inheriting conditions from entity ZI_INFORECORDPARTSOURCE;
+                        
+}

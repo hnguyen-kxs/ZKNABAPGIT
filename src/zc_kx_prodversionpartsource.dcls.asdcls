@@ -1,0 +1,10 @@
+@EndUserText.label: 'DCL for ZC_KX_ProdVersionPartSource'
+@MappingRole: true
+define role ZC_KX_PRODVERSIONPARTSOURCE {
+    grant
+        select
+            on
+                ZC_KX_ProdVersionPartSource
+                    where
+                        inheriting conditions from entity ZI_ProdVersionPartSource;                        
+}

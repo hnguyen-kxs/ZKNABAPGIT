@@ -1,19 +1,20 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Purchase Order - Basic'
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION ]
+@AbapCatalog.extensibility.extensible: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Purchase Order'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-@VDM.viewType: #BASIC
+@VDM.viewType: #COMPOSITE
 define view entity ZI_PurchaseOrders
   as select from    I_PurOrdScheduleLineAPI01 as _PurOrdLine
     inner join      I_PurchaseOrderItemAPI01  as _PurOrdItem on  _PurOrdLine.PurchaseOrder     = _PurOrdItem.PurchaseOrder
                                                              and _PurOrdLine.PurchaseOrderItem = _PurOrdItem.PurchaseOrderItem
     inner join      I_PurchaseOrderAPI01      as _PurOrd     on _PurOrdLine.PurchaseOrder = _PurOrd.PurchaseOrder
-    left outer join I_Supplier                as _Supplier   on _PurOrd.Supplier = _Supplier.Supplier
+    left outer join I_Supplier                as _Supplier   on _PurOrd.Supplier = _Supplier.Supplier 
 {
   key _PurOrdLine.PurchaseOrder                   as PurchaseOrder,
   key _PurOrdLine.PurchaseOrderItem               as PurchaseOrderItem,
@@ -60,3 +61,4 @@ where
   and _PurOrdItem.Material                       <> ''
   and _PurOrdItem.OrderQuantity                  >  0
   and _PurOrdLine.ScheduleLineOrderQuantity      >  0
+  and _Supplier.IsBusinessPurposeCompleted       = '' 
