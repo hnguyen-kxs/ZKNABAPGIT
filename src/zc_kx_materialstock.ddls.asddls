@@ -1,4 +1,4 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'MaterialStock - Consumption'
 @Metadata.ignorePropagatedAnnotations: true

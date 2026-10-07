@@ -1,0 +1,16 @@
+@EndUserText.label: 'WorkCenter role'
+@MappingRole: true
+define role ZI_WORKCENTER {
+    grant
+        select
+            on
+              ZI_WorkCenter
+                   where ( Plant ) =
+    aspect pfcg_auth ( C_ARPL_WRK,
+                       werks,
+                       actvt = '03' )
+    and ( WorkCenterCategoryCode ) =
+    aspect pfcg_auth ( C_ARPL_ART,
+                       ap_art );
+                        
+}

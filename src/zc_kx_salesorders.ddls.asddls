@@ -9,6 +9,8 @@
     dataClass: #MIXED
 }
 @VDM.viewType: #CONSUMPTION
+@DataIntegration.deltaReplication.intended: true
+
 define view entity ZC_KX_SalesOrders
   as select from ZI_SalesOrders
 {

@@ -1,0 +1,15 @@
+@EndUserText.label: 'DCL for ZI_CapacityHeader'
+@MappingRole: true
+define role ZI_CAPACITYHEADER {
+    grant
+        select
+            on
+                ZI_CapacityHeader
+    where ( Plant ) =
+    aspect pfcg_auth ( C_ARPL_WRK,
+                       werks,
+                       actvt = '03' )
+    and ( WorkCenterCategoryCode ) =
+    aspect pfcg_auth ( C_ARPL_ART,
+                       ap_art );
+  } 

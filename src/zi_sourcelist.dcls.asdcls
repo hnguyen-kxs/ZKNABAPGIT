@@ -1,0 +1,17 @@
+@EndUserText.label: 'DCL on ZI_SourceList'
+@MappingRole: true
+define role ZI_SOURCELIST {
+    grant
+        select
+            on
+                ZI_SourceList
+where ( Plant) = aspect pfcg_auth ( 
+    M_ORDR_WRK,
+    WERKS,
+    ACTVT = '03' )
+ and                   
+  (PurchasingOrganization ) = aspect pfcg_auth (  
+    M_ORDR_EKO,
+    EKORG,            
+    ACTVT = '03' );
+}

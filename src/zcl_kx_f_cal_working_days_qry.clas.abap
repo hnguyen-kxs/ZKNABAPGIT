@@ -37,7 +37,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_kx_f_cal_working_days_qry IMPLEMENTATION.
+CLASS ZCL_KX_F_CAL_WORKING_DAYS_QRY IMPLEMENTATION.
+
 
   METHOD if_rap_query_provider~select.
 *& Method to implement working days query
@@ -84,7 +85,7 @@ CLASS zcl_kx_f_cal_working_days_qry IMPLEMENTATION.
     ENDIF.
 
     SELECT *
-    FROM @mt_fact_cal AS fcal
+    FROM @mt_fact_cal AS fcal           "##ITAB_KEY_IN_SELECT
     INTO TABLE @lt_result_table
     UP TO @lv_top ROWS.
 
@@ -96,12 +97,13 @@ CLASS zcl_kx_f_cal_working_days_qry IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD generate_working_days_table.
 
     DATA lv_year TYPE int2.
     DATA lv_current_year TYPE int2.
 
-    SELECT SINGLE *  FROM I_FactoryCalendarBasic  WHERE FactoryCalendarID = @iv_fcal_id INTO @DATA(ls_factoryCalendar).
+    SELECT SINGLE *  FROM I_FactoryCalendarBasic  WHERE FactoryCalendarID = @iv_fcal_id INTO @DATA(ls_factoryCalendar). "#EC CI_ALL_FIELDS_NEEDED
     IF sy-subrc EQ 0.
       DATA(lv_current_date) = cl_abap_context_info=>get_system_date(  ).
 
@@ -157,10 +159,12 @@ CLASS zcl_kx_f_cal_working_days_qry IMPLEMENTATION.
           ENDIF.
           lv_date = lv_date + 1.
         ENDDO.
-      CATCH cx_fhc_runtime INTO DATA(lo_cx).
+      CATCH cx_fhc_runtime  INTO DATA(lo_cx_fhc).
+      CATCH cx_static_check INTO DATA(lo_cx_static).
     ENDTRY.
 
   ENDMETHOD.
+
 
   METHOD is_leap_year.
     rv_result = COND abap_bool(
@@ -169,5 +173,4 @@ CLASS zcl_kx_f_cal_working_days_qry IMPLEMENTATION.
       ELSE abap_false
     ).
   ENDMETHOD.
-
 ENDCLASS.

@@ -8,6 +8,8 @@
     dataClass: #MIXED
 }
 @VDM.viewType: #COMPOSITE
+@DataIntegration.deltaReplication.intended: true
+@DataIntegration.deltaReplication.ignoredDataSources: [ 'I_Customer', 'I_SDScheduleLineWthOpenRqmtQty' ]
 define view entity ZI_Deliveries
   as select from I_DeliveryDocumentItem         as _Item
     inner join   I_DeliveryDocument             as _Header   on _Item.DeliveryDocument = _Header.DeliveryDocument

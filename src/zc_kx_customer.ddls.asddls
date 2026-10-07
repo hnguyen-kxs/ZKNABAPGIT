@@ -7,6 +7,8 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
+@VDM.viewType: #CONSUMPTION
+
 define view entity ZC_KX_Customer
   as select from ZI_Customer
 {

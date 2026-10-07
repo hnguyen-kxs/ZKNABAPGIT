@@ -1,0 +1,10 @@
+@EndUserText.label: 'Planned Independent Rqmts - Consumption'
+@MappingRole: true
+define role ZC_KX_PlndIndeprqmts {
+    grant
+        select
+            on
+                ZC_KX_PlndIndeprqmts
+                    where
+                        inheriting conditions from entity ZI_PlndIndepRqmts;                        
+}

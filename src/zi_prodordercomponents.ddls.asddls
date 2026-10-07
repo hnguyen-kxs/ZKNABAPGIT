@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Production Order Components View'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{

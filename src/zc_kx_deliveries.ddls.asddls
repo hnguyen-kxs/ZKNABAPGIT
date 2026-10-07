@@ -1,4 +1,4 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Delivery - Consumption'
 @Metadata.ignorePropagatedAnnotations: true
@@ -8,6 +8,7 @@
     dataClass: #MIXED
 }
 @VDM.viewType: #CONSUMPTION
+
 define view entity ZC_KX_Deliveries
   as select from ZI_Deliveries
 {

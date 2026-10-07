@@ -1,0 +1,11 @@
+@EndUserText.label: 'Capacity Shift role'
+@MappingRole: true
+define role ZC_KX_CAPACITYSHIFT {
+    grant
+        select
+            on
+                ZC_KX_CapacityShift
+                   where
+                       inheriting conditions from entity ZI_KX_CapacityShift;     
+                        
+}

@@ -1,0 +1,9 @@
+@EndUserText.label: 'Delivery _HDA role'
+@MappingRole: true
+define role ZI_DELIVERY_HDA {
+    grant select on ZI_Delivery_HDA
+    // Check for I_Customer join                
+    where   ( ) = 
+    aspect pfcg_auth (  F_KNA1_GEN,
+                        actvt = '03' );
+}

@@ -6,6 +6,6 @@ define role ZC_KX_BILLOFMATERIAL {
             on
                 ZC_KX_BillOfMaterial
                     where
-                        inheriting conditions from entity ZC_KX_BillOfMaterial;
+                        inheriting conditions from entity ZI_BillOfMaterial;
                         
 }

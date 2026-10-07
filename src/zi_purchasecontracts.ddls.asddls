@@ -89,4 +89,4 @@ where
       _Contr.ValidityEndDate                >= $session.system_date
   and _Contr.PurchasingDocumentDeletionCode =  ''
   and _Item.Material                        <> ''
-  and _Suppl.IsBusinessPurposeCompleted = ''                            //Personal Data Protection filter
+  and _Suppl.IsBusinessPurposeCompleted     =  '' //Personal Data Protection filter

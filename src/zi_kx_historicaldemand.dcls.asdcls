@@ -1,0 +1,9 @@
+@EndUserText.label: 'ZI__KX_HistoricalDemand role'
+@MappingRole: true
+define role ZI_KX_HISTORICALDEMAND {
+      grant 
+        select
+            on
+                ZI_KX_HISTORICALDEMAND
+    where inheriting conditions from entity ZI_SALESORDERS_HDA;
+}

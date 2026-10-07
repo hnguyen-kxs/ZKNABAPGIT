@@ -1,0 +1,11 @@
+@EndUserText.label: 'WorkCenter role'
+@MappingRole: true
+define role ZC_KX_WORKCENTER {
+    grant
+        select
+            on
+              ZC_KX_WorkCenter
+                    where
+                      inheriting conditions from entity ZI_WorkCenter;
+                        
+}

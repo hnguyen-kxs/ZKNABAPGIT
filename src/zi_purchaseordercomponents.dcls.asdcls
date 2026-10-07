@@ -6,9 +6,11 @@ define role ZI_PURCHASEORDERCOMPONENTS {
             on
                 ZI_PurchaseOrderComponents
                                         where 
-                        ( Plant ) =  aspect pfcg_auth ( M_MRES_WWA, 
-                        werks, 
-                        actvt = '03' )
+                        ( ReservationPlant ) =  aspect pfcg_auth ( M_MRES_WWA,
+                                                        werks, 
+                                                        actvt = '03' )
   and ( ) = aspect pfcg_auth ( M_MRES_BWA, actvt = '03' )
- ; 
+  
+  and  inheriting conditions from entity ZI_PurchaseOrders;
+ 
 }

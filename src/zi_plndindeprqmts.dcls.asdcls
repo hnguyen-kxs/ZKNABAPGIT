@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZI_PlndIndepRqmts'
+@MappingRole: true
+define role ZI_PLNDINDEPRQMTS {
+    grant 
+        select
+            on
+                ZI_PlndIndepRqmts
+                                  where (  
+           ( Plant ) = aspect pfcg_auth( C_PPBD, WERKS, AKTTYP = 'A' )
+           );
+}

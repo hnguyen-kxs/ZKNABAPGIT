@@ -1,6 +1,6 @@
 @AbapCatalog.viewEnhancementCategory: [#PROJECTION_LIST, #UNION]
 @AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: 'Planned Independent Req - Basic'
+@EndUserText.label: 'Planned Independent Req - Composite'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
@@ -12,18 +12,18 @@ define view entity ZI_PlndIndepRqmts
   as select from I_PlndIndepRqmtByIntKey     as _Header
     inner join   I_PlndIndepRqmtItemByIntKey as _Item on _Header.PlndIndepRqmtInternalID = _Item.PlndIndepRqmtInternalID
 {
-  key _Header.PlndIndepRqmtInternalID        as PlndIndepRqmtInternalID,
-      @Semantics.quantity.unitOfMeasure : 'BaseUnit'
-  key _Item.PlannedQuantity                  as PlannedQuantity,
-      _Header.PlndIndepRqmtVersion           as PlndIndepRqmtVersion,
-      cast(_Header.Product as abap.char(40)) as Product,
-      _Header.Plant                          as Plant,
-      _Header.PlndIndepRqmtType              as PlndIndepRqmtType,
-      _Header.RequirementPlan                as RequirementPlan,
-      _Header.PlndIndepRqmtConsumptionStrgy  as PlndIndepRqmtConsumptionStrgy,
-      _Header.PlndIndepRqmtConsumptionAssgmt as PlndIndepRqmtConsumptionAssgmt,
-      _Item.BaseUnit                         as BaseUnit,
-      _Item.WorkingDayDate                   as WorkingDayDate
+  key       _Header.PlndIndepRqmtInternalID        as PlndIndepRqmtInternalID,
+  key       _Item.WorkingDayDate                   as WorkingDayDate,
+            @Semantics.quantity.unitOfMeasure : 'BaseUnit'
+            _Item.PlannedQuantity                  as PlannedQuantity,
+            _Header.PlndIndepRqmtVersion           as PlndIndepRqmtVersion,
+            cast(_Header.Product as abap.char(40)) as Product,
+            _Header.Plant                          as Plant,
+            _Header.PlndIndepRqmtType              as PlndIndepRqmtType,
+            _Header.RequirementPlan                as RequirementPlan,
+            _Header.PlndIndepRqmtConsumptionStrgy  as PlndIndepRqmtConsumptionStrgy,
+            _Header.PlndIndepRqmtConsumptionAssgmt as PlndIndepRqmtConsumptionAssgmt,
+            _Item.BaseUnit                         as BaseUnit
 }
 where
   _Item.PlannedQuantity > 0

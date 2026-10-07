@@ -1,0 +1,11 @@
+@EndUserText.label: 'HistoricalSupplyMake Access Control'
+@MappingRole: true
+define role ZC_KX_HISTORICALSUPPLYMAKE {
+    grant
+        select
+            on
+                ZC_KX_HistoricalSupplyMake
+                    where
+                        inheriting conditions from entity ZI_HistoricalSupplyMake;
+                        
+}

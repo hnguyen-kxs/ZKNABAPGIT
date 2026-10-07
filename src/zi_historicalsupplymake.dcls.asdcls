@@ -1,0 +1,13 @@
+@EndUserText.label: 'HistoricalSupplyMake Access Control'
+@MappingRole: true
+define role ZI_HISTORICALSUPPLYMAKE {
+        grant 
+        select
+            on
+                ZI_HistoricalSupplyMake
+    where ( ManufacturingOrderType,
+          ProductionPlant ) =
+    aspect pfcg_auth ( C_AFKO_AWK,
+                       aufart,
+                       werks );
+  }

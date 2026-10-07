@@ -1,0 +1,10 @@
+@EndUserText.label: 'Capacity Shift'
+@MappingRole: true
+define role ZI_KX_CAPACITYSHIFT {
+    grant
+        select
+            on
+                ZI_KX_CapacityShift
+                    where
+                       inheriting conditions from entity ZI_CapacityHeader;                       
+}

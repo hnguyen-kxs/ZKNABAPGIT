@@ -1,0 +1,11 @@
+@EndUserText.label: 'DCL for ZC_KX_CapacityHeader'
+@MappingRole: true
+define role ZC_KX_CAPACITYHEADER {
+    grant
+        select
+            on
+                ZC_KX_CapacityHeader
+                    where
+                        inheriting conditions from entity ZI_CapacityHeader;
+                        
+}

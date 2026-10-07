@@ -9,14 +9,18 @@
     dataClass: #MIXED
 }
 @VDM.viewType: #COMPOSITE
+
+@DataIntegration.deltaReplication.intended: true
+@DataIntegration.deltaReplication.ignoredDataSources: [ 'I_Customer', 'I_SalesDocumentTypeLangDepdnt', 'I_SalesDocumentItem', 'I_SDScheduleLineWthOpenRqmtQty' ]
+
 define view entity ZI_SalesOrders
   as select from    I_SalesDocumentScheduleLine    as _SalesOrd
     inner join      I_SDScheduleLineWthOpenRqmtQty as _OpenQty   on  _SalesOrd.SalesDocument     = _OpenQty.SalesDocument
                                                                  and _SalesOrd.SalesDocumentItem = _OpenQty.SalesDocumentItem
                                                                  and _SalesOrd.ScheduleLine      = _OpenQty.ScheduleLine
-    inner join      I_SalesDocumentItem            as _SalesItem on  _SalesOrd.SalesDocument     = _SalesItem.SalesDocument
+    left outer join I_SalesDocumentItem            as _SalesItem on  _SalesOrd.SalesDocument     = _SalesItem.SalesDocument
                                                                  and _SalesOrd.SalesDocumentItem = _SalesItem.SalesDocumentItem
-    inner join      I_Customer                     as _Customer  on _OpenQty.SoldToParty = _Customer.Customer
+    left outer join I_Customer                     as _Customer  on _OpenQty.SoldToParty = _Customer.Customer
     left outer join I_SalesDocumentTypeLangDepdnt  as _Tauum     on  _OpenQty.SalesDocumentType = _Tauum.SalesDocumentType
                                                                  and _Tauum.Language            = 'E'
 {
@@ -87,7 +91,9 @@ where
        _SalesItem.ConfdDelivQtyInOrderQtyUnit != 0
     or _SalesItem.ItemIsDeliveryRelevant      =  'X'
   )
-  and  _SalesItem.SDDocumentCategory          =  'C'
-  or   _SalesItem.SDDocumentCategory          =  'E'
-  or   _SalesItem.SDDocumentCategory          =  'I'
-  and _Customer.IsBusinessPurposeCompleted    =  ' '
+  and (
+        _SalesItem.SDDocumentCategory          =  'C'
+     or _SalesItem.SDDocumentCategory          =  'E'
+     or _SalesItem.SDDocumentCategory          =  'I'
+  )
+  and  _Customer.IsBusinessPurposeCompleted   =  ' '
