@@ -1,11 +1,11 @@
-@EndUserText.label: 'ZI_KX_HISTORICALDEMAND role'
+@EndUserText.label: 'DCL for ZC_KX_HistoricalDemand'
 @MappingRole: true
 define role ZC_KX_HISTORICALDEMAND {
     grant
         select
             on
-                ZC_KX_HISTORICALDEMAND
+                ZC_KX_HistoricalDemand
                     where
-                       inheriting conditions from entity ZI_KX_HISTORICALDEMAND;
+                       inheriting conditions from entity ZI_KX_HistoricalDemand;
                         
 }
